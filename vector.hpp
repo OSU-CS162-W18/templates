@@ -12,6 +12,8 @@ private:
 public:
   vector();
   ~vector();
+  unsigned int size();
+  unsigned int capacity();
   void push_back(const T& val);
   void reserve(unsigned int n);
   T& at(unsigned int idx);
@@ -23,6 +25,16 @@ vector<T>::vector() : _size(0), _capacity(0), _data(NULL) {}
 template <class T>
 vector<T>::~vector() {
   delete[] _data;
+}
+
+template <class T>
+unsigned int vector<T>::size() {
+  return this->_size;
+}
+
+template <class T>
+unsigned int vector<T>::capacity() {
+  return this->_capacity;
 }
 
 template <class T>
